@@ -203,6 +203,22 @@ body {
   </div>
 </div>
 
+<script>
+const videos = document.querySelectorAll("video");
+
+window.addEventListener("scroll", () => {
+  videos.forEach(video => {
+    const rect = video.getBoundingClientRect();
+    if (rect.top < innerHeight * 0.8 && rect.bottom > 0) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  });
+});
+</script>
+
+
 <div class="slide"><div class="card"><img src="img5.jpg"></div></div>
 
 <!-- 💌 LETTER -->
@@ -289,4 +305,5 @@ Always remember babe I'm always right here for you 💖`;
 </script>
 
 </body>
+
 </html>
